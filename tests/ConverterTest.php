@@ -98,6 +98,11 @@ class ExampleTest extends TestCase
                 '{"entityMap":{},"blocks":[{"key":"9nc73","text":"BoldItalic","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":4,"length":6,"style":"BOLD"},{"offset":0,"length":4,"style":"ITALIC"}],"entityRanges":[]}]}',
                 '<p><em>Bold</em><strong>Italic</strong></p>',
             ],
+            // Some overlapping styles
+            [
+                '{"entityMap":{},"blocks":[{"key":"7bq8c","text":"Hello world","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":2,"length":3,"style":"ITALIC"},{"offset":6,"length":2,"style":"ITALIC"},{"offset":6,"length":5,"style":"BOLD"}],"entityRanges":[],"data":{}}]}',
+                '<p>He<em>llo</em> <em><strong>wo</strong></em><strong>rld</strong></p>',
+            ],
             // Entity
             [
                 '{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"/","rel":null,"title":"hi","extra":"foo"}}},"blocks":[{"key":"8r91j","text":"a","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":0,"length":1,"style":"ITALIC"}],"entityRanges":[{"offset":0,"length":1,"key":0}]}]}',
